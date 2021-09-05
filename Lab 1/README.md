@@ -73,7 +73,8 @@ The interactive device can be anything *except* a computer, a tablet computer or
 Sketch a storyboard of the interactions you are planning. It does not need to be perfect, but must get across the behavior of the interactive device and the other characters in the scene. 
 
 \*\***Include a picture of your storyboard here**\*\*
-storyboard.PNG
+![image](https://user-images.githubusercontent.com/46605146/132140340-ade42468-c184-4bcb-9a2f-92661e5a119d.png)
+
 
 Present your idea to the other people in your breakout room. You can just get feedback from one another or you can work together on the other parts of the lab.
 
@@ -123,8 +124,9 @@ Only now should you start worrying about what the device should look like. Devel
 Think about the setting of the device: is the environment a place where the device could overheat? Is water a danger? Does it need to have bright colors in an emergency setting?
 
 \*\***Include sketches of what your device might look like here.**\*\*
-
+![e3a547a6e744833bcc59a38a61d51d8](https://user-images.githubusercontent.com/46605146/132140344-46fb04c6-0f2f-4cfe-ae4e-f025b55aaade.jpg)
 \*\***What concerns or opportunitities are influencing the way you've designed the device to look?**\*\*
+
 
 
 ## Part F. Record
