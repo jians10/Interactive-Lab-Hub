@@ -58,13 +58,13 @@ Labs are due on Mondays. Make sure this page is linked to on your main class hub
 
 To stage the interaction with your interactive device, think about:
 
-_Setting:_ Where is this interaction happening? (e.g., a jungle, the kitchen) When is it happening?
+_Setting:_In the bathroom of a department, an electric toothbrush
 
-_Players:_ Who is involved in the interaction? Who else is there? If you reflect on the design of current day interactive devices like the Amazon Alexa, it’s clear they didn’t take into account people who had roommates, or the presence of children. Think through all the people who are in the setting.
+_Players:_ Tom is a electric toothbrush user, who live along in the department
 
-_Activity:_ What is happening between the actors?
+_Activity:_ Tom do not used to record the last time he change his brush head. The interactive toothbrush holder can use its light to remain Tom to change brushhead on time. 
 
-_Goals:_ What are the goals of each player? (e.g., jumping to a tree, opening the fridge). 
+_Goals:_ The goal for Tom is to change his toothbrush head on time. 
 
 The interactive device can be anything *except* a computer, a tablet computer or a smart phone, but the main way it interacts needs to be using light.
 
@@ -86,8 +86,12 @@ Try physically acting out the interaction you planned. For now, you can just pre
 
 \*\***Are there things that seemed better on paper than acted out?**\*\*
 
+Yes, for instance, how to set timer, and how to makesure the timer is accurate.  
+
 \*\***Are there new ideas that occur to you or your collaborators that come up from the acting?**\*\*
 
+Water Proof: since our device is set in bathroom, we have to makesure the device is water proof.
+Multiple Timer: Maybe we should add one more slot and timer for shaver, to remain Tom change shaver blade on time too.
 
 ## Part C. Prototype the device
 
