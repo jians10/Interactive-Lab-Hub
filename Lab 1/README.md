@@ -160,3 +160,5 @@ Do last week’s assignment again, but this time:
 new storyboard: 
 ![image](https://user-images.githubusercontent.com/46605146/132967634-bf15fb38-4458-45be-b548-0489793e6531.png)
 
+![image](https://user-images.githubusercontent.com/46605146/132967885-a92c95fa-7883-43d6-ae77-1e6a162c0ba5.png)
+
