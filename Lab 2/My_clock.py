@@ -60,20 +60,45 @@ backlight = digitalio.DigitalInOut(board.D22)
 backlight.switch_to_output()
 backlight.value = True
 
+
+buttonA = digitalio.DigitalInOut(board.D23)
+buttonB = digitalio.DigitalInOut(board.D24)
+buttonA.switch_to_input()
+buttonB.switch_to_input()
+
+#current_time = time.strftime("%H:%M") 
+
+now = datetime.now() # current date and time
+current_time = now.strftime("%H:%M")
+date = now.strftime("%m/%d/%Y")
+
+# Image Formatting
+def image_format(picture, width, height):
+    picture = picture.convert('RGB')
+    picture = picture.resize((240, 135), Image.BICUBIC)
+    return picture
+
+imagepath=./Moles/
+
+
 while True:
+     
     # Draw a black filled box to clear the image.
     draw.rectangle((0, 0, width, height), outline=0, fill=0)
 
     #TODO: Lab 2 part D work should be filled in here. You should be able to look in cli_clock.py and stats.py 
     cur_time = time.strftime("%m/%d/%Y %H:%M:%S") 
+    year, month, day, hour, min = map(int, time.strftime("%Y %m %d %H %M").split())
     
+    imagename="./Moles/tile0{hour}.png"
+    molespic= Image.open(imagename)
+    molespic = Image_format(molespic,width,height)
+    draw = ImageDraw.Draw(tomatoPic)
     y = top
     draw.text((x, y), cur_time, font=font, fill="#FFFFFF")
-
-
-
-
     
+
     # Display image.
     disp.image(image, rotation)
     time.sleep(1)
+
