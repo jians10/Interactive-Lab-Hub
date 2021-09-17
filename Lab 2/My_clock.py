@@ -78,8 +78,8 @@ while True:
     print(hour)
     imagename="./Moles/tile019.png"
     molespic= Image.open(imagename)
-    molespic = Image_format(molespic,width,height)
-    draw = ImageDraw.Draw(tomatoPic)
+    molespic = image_format(molespic,width,height)
+    draw = ImageDraw.Draw(molespic)
     y = top
     draw.text((x, y), cur_time, font=font, fill="#FFFFFF")
     
