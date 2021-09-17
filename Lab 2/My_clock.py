@@ -77,7 +77,7 @@ def image_format(picture, width, height):
 
 
 
-
+image = image_format(image,width,height)
 
 
 
@@ -123,7 +123,7 @@ while False:
     #TODO: Lab 2 part D work should be filled in here. You should be able to look in cli_clock.py and stats.py 
     cur_time = time.strftime("%m/%d/%Y %H:%M:%S") 
     year, month, day, hour, min = map(int, time.strftime("%Y %m %d %H %M").split())
-    print(hour)
+    #print(hour)
     imagename="./Moles/tile019.png"
     molespic= Image.open(imagename)
     molespic = image_format(molespic,width,height)
