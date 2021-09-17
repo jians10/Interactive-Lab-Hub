@@ -60,6 +60,12 @@ backlight = digitalio.DigitalInOut(board.D22)
 backlight.switch_to_output()
 backlight.value = True
 
+def image_format(picture, width, height):
+    picture = picture.convert('RGB')
+    picture = picture.resize((240, 135), Image.BICUBIC)
+
+    return picture
+
 
 while True:
      
