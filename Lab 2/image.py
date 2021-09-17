@@ -78,6 +78,7 @@ image = Image.open("./Moles/tile019.png")
 backlight = digitalio.DigitalInOut(board.D22)
 backlight.switch_to_output()
 backlight.value = True
+image.rotation=90
 
 
 # Scale the image to the smaller screen dimension
