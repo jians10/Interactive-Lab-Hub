@@ -61,24 +61,6 @@ backlight.switch_to_output()
 backlight.value = True
 
 
-buttonA = digitalio.DigitalInOut(board.D23)
-buttonB = digitalio.DigitalInOut(board.D24)
-buttonA.switch_to_input()
-buttonB.switch_to_input()
-
-#current_time = time.strftime("%H:%M") 
-
-now = datetime.now() # current date and time
-current_time = now.strftime("%H:%M")
-date = now.strftime("%m/%d/%Y")
-
-# Image Formatting
-def image_format(picture, width, height):
-    picture = picture.convert('RGB')
-    picture = picture.resize((240, 135), Image.BICUBIC)
-    return picture
-
-
 while True:
      
     # Draw a black filled box to clear the image.
