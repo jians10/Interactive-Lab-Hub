@@ -78,8 +78,6 @@ def image_format(picture, width, height):
     picture = picture.resize((240, 135), Image.BICUBIC)
     return picture
 
-imagepath=.../Moles/
-
 
 while True:
      
