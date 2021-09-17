@@ -70,7 +70,7 @@ while True:
     cur_time = time.strftime("%m/%d/%Y %H:%M:%S") 
     year, month, day, hour, min = map(int, time.strftime("%Y %m %d %H %M").split())
     print(hour)
-    imagename=".../Moles/tile019.png"
+    imagename="./Moles/tile019.png"
     molespic= Image.open(imagename)
     molespic = Image_format(molespic,width,height)
     draw = ImageDraw.Draw(tomatoPic)
