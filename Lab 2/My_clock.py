@@ -69,8 +69,8 @@ while True:
     #TODO: Lab 2 part D work should be filled in here. You should be able to look in cli_clock.py and stats.py 
     cur_time = time.strftime("%m/%d/%Y %H:%M:%S") 
     year, month, day, hour, min = map(int, time.strftime("%Y %m %d %H %M").split())
-    
-    imagename="./Moles/tile0{hour}.png"
+    print(hour)
+    imagename=".../Moles/tile0{hour}.png"
     molespic= Image.open(imagename)
     molespic = Image_format(molespic,width,height)
     draw = ImageDraw.Draw(tomatoPic)
