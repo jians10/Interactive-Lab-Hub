@@ -1,9 +1,14 @@
 import time
 import subprocess
+from PIL import Image, ImageDraw, ImageFont
 import digitalio
 import board
-from PIL import Image, ImageDraw, ImageFont
-import adafruit_rgb_display.st7789 as st7789
+import adafruit_rgb_display.ili9341 as ili9341
+import adafruit_rgb_display.st7789 as st7789  # pylint: disable=unused-import
+import adafruit_rgb_display.hx8357 as hx8357  # pylint: disable=unused-import
+import adafruit_rgb_display.st7735 as st7735  # pylint: disable=unused-import
+import adafruit_rgb_display.ssd1351 as ssd1351  # pylint: disable=unused-import
+import adafruit_rgb_display.ssd1331 as ssd1331  # pylint: disable=unused-import
 
 # Configuration for CS and DC pins (these are FeatherWing defaults on M0/M4):
 cs_pin = digitalio.DigitalInOut(board.CE0)
@@ -55,6 +60,10 @@ x = 0
 # Some other nice fonts to try: http://www.dafont.com/bitmap.php
 font = ImageFont.truetype("/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf", 18)
 
+
+image = Image.open("red.jpg")
+
+
 # Turn on the backlight
 backlight = digitalio.DigitalInOut(board.D22)
 backlight.switch_to_output()
@@ -67,7 +76,46 @@ def image_format(picture, width, height):
     return picture
 
 
-while True:
+
+
+
+
+
+
+
+
+
+image_ratio = image.width / image.height
+screen_ratio = width / height
+if screen_ratio < image_ratio:
+    scaled_width = image.width * height // image.height
+    scaled_height = height
+else:
+    scaled_width = width
+    scaled_height = image.height * width // image.width
+image = image.resize((scaled_width, scaled_height), Image.BICUBIC)
+
+# Crop and center the image
+x = scaled_width // 2 - width // 2
+y = scaled_height // 2 - height // 2
+image = image.crop((x, y, x + width, y + height))
+
+# Display image.
+disp.image(image)
+
+
+
+
+
+
+
+
+
+
+
+
+
+while False:
      
     # Draw a black filled box to clear the image.
     draw.rectangle((0, 0, width, height), outline=0, fill=0)
