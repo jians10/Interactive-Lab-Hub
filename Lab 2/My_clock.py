@@ -122,11 +122,11 @@ while True:
     if(hour!=prevhour):
        
         #print(hour)
-        path ="./Moles/tile0"+hour+".png"
-        print(path)
-        #molespic= Image.open(imagename)
-        #molespic = molespic.resize((int(130), int(235)), Image.BICUBIC)
-        #disp.image(molespic)
+        imagename =f"./Moles/tile0{hour}.png"
+        print(imagename)
+        molespic= Image.open(imagename)
+        molespic = molespic.resize((int(130), int(235)), Image.BICUBIC)
+        disp.image(molespic)
     time.sleep(1)
     prevhour= hour
 
