@@ -120,7 +120,7 @@ while True:
     cur_time = time.strftime("%m/%d/%Y %H:%M:%S")
     #draw.text((x, y), cur_time, font=font, fill="#FFFFFF")
 
-    year, month, day, hour, min = map(int, time.strftime("%Y %m %d %H %M").split())
+    year, month, day, hour, min,second = map(int, time.strftime("%Y %m %d %H %M %S").split())
     #if(hour!=prevhour):
        
     #print(hour)
