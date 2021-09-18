@@ -69,16 +69,17 @@ backlight = digitalio.DigitalInOut(board.D22)
 backlight.switch_to_output()
 backlight.value = True
 
-def image_format(picture, width, height):
+def image_format(picture):
     picture = picture.convert('RGB')
+    picture = picture.rotate(90)
     picture = picture.resize((240, 135), Image.BICUBIC)
 
     return picture
 
 
 
-image = image_format(image,width,height)
-
+image = image_format(image)
+draw = ImageDraw.Draw(image)
 # Display image.
 disp.image(image)
 
@@ -93,25 +94,4 @@ disp.image(image)
 
 
 
-
-while False:
-     
-    # Draw a black filled box to clear the image.
-    draw.rectangle((0, 0, width, height), outline=0, fill=0)
-
-    #TODO: Lab 2 part D work should be filled in here. You should be able to look in cli_clock.py and stats.py 
-    cur_time = time.strftime("%m/%d/%Y %H:%M:%S") 
-    year, month, day, hour, min = map(int, time.strftime("%Y %m %d %H %M").split())
-    #print(hour)
-    imagename="./Moles/tile019.png"
-    molespic= Image.open(imagename)
-    molespic = image_format(molespic,width,height)
-    draw = ImageDraw.Draw(molespic)
-    y = top
-    draw.text((x, y), cur_time, font=font, fill="#FFFFFF")
-    
-
-    # Display image.
-    disp.image(image, rotation)
-    time.sleep(1)
 
