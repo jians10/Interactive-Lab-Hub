@@ -69,6 +69,26 @@ backlight = digitalio.DigitalInOut(board.D22)
 backlight.switch_to_output()
 backlight.value = True
 
+
+
+image_ratio = image.width / image.height
+screen_ratio = width / height
+if screen_ratio < image_ratio:
+    scaled_width = image.width * height // image.height
+    scaled_height = height
+else:
+    scaled_width = width
+    scaled_height = image.height * width // image.width
+image = image.resize((int(scaled_width/2), int(scaled_height/2)), Image.BICUBIC)
+
+
+
+
+
+
+
+
+
 def image_format(picture):
     picture = picture.convert('RGB')
     picture = picture.rotate(90)
@@ -78,8 +98,8 @@ def image_format(picture):
 
 
 
-image = image_format(image)
-draw = ImageDraw.Draw(image)
+#image = image_format(image)
+#draw = ImageDraw.Draw(image)
 # Display image.
 disp.image(image)
 
