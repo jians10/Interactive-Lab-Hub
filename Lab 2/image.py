@@ -52,10 +52,8 @@ disp = st7789.ST7789(
     baudrate=BAUDRATE,
     width=135,
     height=240,
-    ##x_offset=53,
-    ##y_offset=40,
-    x_offset=100,
-    y_offset=100,
+    x_offset=53,
+    y_offset=40,
 )
 # pylint: enable=line-too-long
 
@@ -92,7 +90,7 @@ if screen_ratio < image_ratio:
 else:
     scaled_width = width
     scaled_height = image.height * width // image.width
-image = image.resize((int(scaled_width/2), int(scaled_height/2)), Image.BICUBIC)
+image = image.resize((int(scaled_width), int(scaled_height)), Image.BICUBIC)
 
 # Crop and center the image
 x = scaled_width // 2 - width // 2
