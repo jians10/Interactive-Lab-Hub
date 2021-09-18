@@ -99,7 +99,7 @@ x = 0
 y = top
 
 font = ImageFont.truetype("/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf", 18)
-txt = Image.new('L',(100,50))
+txt = Image.new('RGB',(100,50))
 #draw= ImageDraw.Draw(molespic)
 d= ImageDraw.Draw(txt)
 cur_time = time.strftime("%m/%d/%Y %H:%M:%S")
