@@ -35,25 +35,28 @@ disp = st7789.ST7789(
 )
 
 # Create blank image for drawing.
-# Make sure to create image with mode 'RGB' for full color.
-height = disp.width  # we swap height/width to rotate it to landscape!
-width = disp.height
+if disp.rotation % 180 == 90:
+    height = disp.width  # we swap height/width to rotate it to landscape!
+    width = disp.height
+else:
+    width = disp.width  # we swap height/width to rotate it to landscape!
+    height = disp.height
 image = Image.new("RGB", (width, height))
-rotation = 90
+
 
 # Get drawing object to draw on image.
 draw = ImageDraw.Draw(image)
 
 # Draw a black filled box to clear the image.
 draw.rectangle((0, 0, width, height), outline=0, fill=(0, 0, 0))
-disp.image(image, rotation)
+disp.image(image)
 # Draw some shapes.
 # First define some constants to allow easy resizing of shapes.
-padding = -2
-top = padding
-bottom = height - padding
+#padding = -2
+#top = padding
+#bottom = height - padding
 # Move left to right keeping track of the current x position for drawing shapes.
-x = 0
+#x = 0
 
 # Alternatively load a TTF font.  Make sure the .ttf font file is in the
 # same directory as the python script!
