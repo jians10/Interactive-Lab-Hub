@@ -192,9 +192,10 @@ After that, Git will ask you to login to your GitHub account to push the updates
 
 \*\*\***Take a video of your PiClock.**\*\*\*
 
+
 ## Part G. 
 ## Sketch and brainstorm further interactions and features you would like for your clock for Part 2.
-
+maybe I can add a clear info of current time on the top left of the screen 
 
 # Prep for Part 2
 
