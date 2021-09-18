@@ -93,7 +93,7 @@ else:
 
 print(scaled_height)
 print(scaled_width)
-image= Image.rotate(90)
+image= image.rotate(90)
 image = image.resize((int(130), int(235)), Image.BICUBIC)
 
 # Crop and center the image
