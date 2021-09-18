@@ -100,9 +100,10 @@ y = top
 
 font = ImageFont.truetype("/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf", 18)
 #txt = Image.new('RGB',(100,50))
-draw= ImageDraw.Draw(molespic)
+#draw= ImageDraw.Draw(molespic)
 #d= ImageDraw.Draw(txt)
 cur_time = time.strftime("%m/%d/%Y %H:%M:%S")
+draw= ImageDraw.Draw(molespic)
 draw.text((x, y), cur_time, font=font, fill="#FFFFFF")
 #d.text((x, y), cur_time, font=font, fill="#FFFFFF")
 #w= txt.rotate(90, expand=1)
@@ -120,17 +121,18 @@ while False:
     #draw.text((x, y), cur_time, font=font, fill="#FFFFFF")
 
     year, month, day, hour, min = map(int, time.strftime("%Y %m %d %H %M").split())
-    if(hour!=prevhour):
+    #if(hour!=prevhour):
        
-        #print(hour)
-        imagename =f"./Moles/tile0{hour}.png"
-        print(imagename)
-        molespic= Image.open(imagename)
-        molespic = molespic.resize((int(130), int(235)), Image.BICUBIC)
-        disp.image(molespic)
+    #print(hour)
+    imagename =f"./Moles/tile0{second//2.5}.png"
+    molespic= Image.open(imagename)
+    molespic = molespic.resize((int(130), int(235)), Image.BICUBIC)
+    draw= ImageDraw.Draw(molespic)
+    draw.text((x, y), cur_time, font=font, fill="#FFFFFF")
+    disp.image(molespic)
 
     time.sleep(1)
-    prevhour= hour
+    #prevhour= hour
 
 
 
