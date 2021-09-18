@@ -74,7 +74,7 @@ draw = ImageDraw.Draw(image)
 draw.rectangle((0, 0, width, height), outline=0, fill=(0, 0, 0))
 disp.image(image)
 
-image = Image.open("./Moles/tile019.png")
+image = Image.open("./Moles/tile000.png")
 
 backlight = digitalio.DigitalInOut(board.D22)
 backlight.switch_to_output()
@@ -102,6 +102,33 @@ image = image.resize((int(130), int(235)), Image.BICUBIC)
 
 # Display image.
 disp.image(image)
+
+
+
+
+
+
+
+
+
+while True:
+     
+    # Draw a black filled box to clear the image.
+    draw.rectangle((0, 0, width, height), outline=0, fill=0)
+
+    #TODO: Lab 2 part D work should be filled in here. You should be able to look in cli_clock.py and stats.py 
+    cur_time = time.strftime("%m/%d/%Y %H:%M:%S") 
+    year, month, day, hour, min = map(int, time.strftime("%Y %m %d %H %M").split())
+    if(hour!=prevhour):
+       
+        #print(hour)
+        imagename="./Moles/tile0{hour}.png"
+        molespic= Image.open(imagename)
+        molespic = molespic.resize((int(130), int(235)), Image.BICUBIC)
+        disp.image(molespic)
+    time.sleep(1)
+    prevhour= hour
+
 
 
 
