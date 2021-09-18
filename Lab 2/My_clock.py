@@ -105,7 +105,7 @@ d= ImageDraw.Draw(txt)
 cur_time = time.strftime("%m/%d/%Y %H:%M:%S")
 #draw.text((x, y), cur_time, font=font, fill="#FFFFFF")
 d.text((x, y), cur_time, font=font, fill="#FFFFFF")
-w= txt.rotate(90,expend=1)
+w= txt.rotate(90, expand=1)
 molespic.paste(ImageOps.colorize(w, (0,0,0), (255,255,84)), (242,60),  w)
 disp.image(molespic)
 
