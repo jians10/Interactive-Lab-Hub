@@ -30,8 +30,8 @@ disp = st7789.ST7789(
     baudrate=BAUDRATE,
     width=135,
     height=240,
-    x_offset=53,
-    y_offset=40,
+    x_offset=0,
+    y_offset=0,
 )
 
 # Create blank image for drawing.
