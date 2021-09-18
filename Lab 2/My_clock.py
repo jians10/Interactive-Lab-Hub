@@ -64,7 +64,7 @@ disp.image(image)
 font = ImageFont.truetype("/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf", 18)
 
 
-image = Image.open("./Moles/tile019.png")
+MoleImage = Image.open("./Moles/tile019.png")
 
 
 # Turn on the backlight
@@ -72,19 +72,20 @@ backlight = digitalio.DigitalInOut(board.D22)
 backlight.switch_to_output()
 backlight.value = True
 
-image = image.rotate(90)
+MoleImage = MoleImage.rotate(90)
 
-image_ratio = image.width / image.height
+image_ratio = MoleImage.width / MoleImage.height
 screen_ratio = width / height
 if screen_ratio < image_ratio:
-    scaled_width = image.width * height // image.height
+    scaled_width = MoleImage.width * height // MoleImage.height
     scaled_height = height
 else:
     scaled_width = width
-    scaled_height = image.height * width // image.width
-image = image.resize((int(scaled_width/2), int(scaled_height/2)), Image.BICUBIC)
+    scaled_height = MoleImage.height * width // MoleImage.width
+MoleImage = MoleImage.resize((int(scaled_width/2), int(scaled_height/2)), Image.BICUBIC)
 
-
+print(scaled_height/2)
+print(scaled_width/2)
 
 
 
@@ -104,7 +105,7 @@ def image_format(picture):
 #image = image_format(image)
 #draw = ImageDraw.Draw(image)
 # Display image.
-disp.image(image)
+disp.image(MoleImage)
 
 
 
