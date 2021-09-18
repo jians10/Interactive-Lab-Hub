@@ -82,7 +82,7 @@ if screen_ratio < image_ratio:
 else:
     scaled_width = width
     scaled_height = MoleImage.height * width // MoleImage.width
-MoleImage = MoleImage.resize((int(scaled_width/2), int(scaled_height/2)), Image.BICUBIC)
+MoleImage = MoleImage.resize((int(scaled_width/2-10), int(scaled_height/2-10)), Image.BICUBIC)
 
 print(scaled_height/2)
 print(scaled_width/2)
