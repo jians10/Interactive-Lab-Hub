@@ -101,7 +101,11 @@ y = top
 font = ImageFont.truetype("/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf", 18)
 draw= ImageDraw.Draw(molespic)
 
-while True:
+cur_time = time.strftime("%m/%d/%Y %H:%M:%S")
+draw.text((x, y), cur_time, font=font, fill="#FFFFFF")
+
+
+while False:
      
 
     # Draw a black filled box to clear the image.
