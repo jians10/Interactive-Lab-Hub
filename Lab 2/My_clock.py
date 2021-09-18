@@ -75,6 +75,9 @@ draw.rectangle((0, 0, width, height), outline=0, fill=(0, 0, 0))
 disp.image(image)
 
 image = Image.open("./Moles/tile019.png")
+print(image.height)
+print(image.width)
+image.resize(100,200)
 backlight = digitalio.DigitalInOut(board.D22)
 backlight.switch_to_output()
 backlight.value = True
@@ -90,6 +93,9 @@ if screen_ratio < image_ratio:
 else:
     scaled_width = width
     scaled_height = image.height * width // image.width
+
+print(scaled_height)
+print(scaled_width)
 image = image.resize((int(scaled_width/2), int(scaled_height/2)), Image.BICUBIC)
 
 # Crop and center the image
