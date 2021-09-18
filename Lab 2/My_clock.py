@@ -106,9 +106,11 @@ disp.image(image)
 prevhour=0
 
 
-
-
-
+padding = -2
+top = padding
+bottom = height - padding
+x = 0
+y = top
 
 
 while True:
