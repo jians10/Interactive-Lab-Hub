@@ -99,15 +99,15 @@ x = 0
 y = top
 
 font = ImageFont.truetype("/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf", 18)
-txt = Image.new('RGB',(100,50))
-#draw= ImageDraw.Draw(molespic)
-d= ImageDraw.Draw(txt)
+#txt = Image.new('RGB',(100,50))
+draw= ImageDraw.Draw(molespic)
+#d= ImageDraw.Draw(txt)
 cur_time = time.strftime("%m/%d/%Y %H:%M:%S")
-#draw.text((x, y), cur_time, font=font, fill="#FFFFFF")
-d.text((x, y), cur_time, font=font, fill="#FFFFFF")
-w= txt.rotate(90, expand=1)
-molespic.paste(ImageOps.colorize(w, (0,0,0), (255,255,84)), (242,60),  w)
-disp.image(txt)
+draw.text((x, y), cur_time, font=font, fill="#FFFFFF")
+#d.text((x, y), cur_time, font=font, fill="#FFFFFF")
+#w= txt.rotate(90, expand=1)
+#molespic.paste(ImageOps.colorize(w, (0,0,0), (255,255,84)), (242,60),  w)
+disp.image(molespic)
 
 while False:
      
