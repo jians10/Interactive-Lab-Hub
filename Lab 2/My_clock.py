@@ -99,7 +99,7 @@ x = 0
 y = top
 
 font = ImageFont.truetype("/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf", 18)
-draw= ImageDraw(molespic)
+draw= ImageDraw.Draw(molespic)
 
 while True:
      
