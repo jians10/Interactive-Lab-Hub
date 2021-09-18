@@ -54,7 +54,7 @@ disp = st7789.ST7789(
     height=240,
     ##x_offset=53,
     ##y_offset=40,
-    x_offset=0,
+    x_offset=50,
     y_offset=0,
 )
 # pylint: enable=line-too-long
