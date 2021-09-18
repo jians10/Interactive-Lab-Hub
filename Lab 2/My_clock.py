@@ -103,7 +103,7 @@ image = image.resize((int(130), int(235)), Image.BICUBIC)
 # Display image.
 disp.image(image)
 
-
+prevhour=0
 
 
 
