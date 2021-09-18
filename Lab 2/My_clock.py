@@ -75,13 +75,13 @@ draw.rectangle((0, 0, width, height), outline=0, fill=(0, 0, 0))
 disp.image(image)
 
 image = Image.open("./Moles/tile019.png")
+image= image.rotate(90)
 print(image.height)
 print(image.width)
 image=image.resize((100,200))
 backlight = digitalio.DigitalInOut(board.D22)
 backlight.switch_to_output()
 backlight.value = True
-image= image.rotate(90)
 
 
 # Scale the image to the smaller screen dimension
