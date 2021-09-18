@@ -61,7 +61,7 @@ x = 0
 font = ImageFont.truetype("/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf", 18)
 
 
-image = Image.open("red.jpg")
+image = Image.open("./Moles/tile019.png")
 
 
 # Turn on the backlight
