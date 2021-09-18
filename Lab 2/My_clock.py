@@ -110,7 +110,7 @@ draw.text((x, y), cur_time, font=font, fill="#FFFFFF")
 #molespic.paste(ImageOps.colorize(w, (0,0,0), (255,255,84)), (242,60),  w)
 disp.image(molespic)
 
-while False:
+while True:
      
 
     # Draw a black filled box to clear the image.
