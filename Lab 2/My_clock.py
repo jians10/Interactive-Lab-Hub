@@ -124,7 +124,7 @@ while True:
     #if(hour!=prevhour):
        
     #print(hour)
-    imagename =f"./Moles/tile0{second//2.5}.png"
+    imagename =f"./Moles/tile0{int(second//2.5)}.png"
     molespic= Image.open(imagename)
     molespic = molespic.resize((int(130), int(235)), Image.BICUBIC)
     draw= ImageDraw.Draw(molespic)
