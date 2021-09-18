@@ -74,26 +74,12 @@ draw = ImageDraw.Draw(image)
 draw.rectangle((0, 0, width, height), outline=0, fill=(0, 0, 0))
 disp.image(image)
 
-image = Image.open("./Moles/tile00.png")
+molespic = Image.open("./Moles/tile00.png")
 
 backlight = digitalio.DigitalInOut(board.D22)
 backlight.switch_to_output()
 backlight.value = True
-
-
-# Scale the image to the smaller screen dimension
-image_ratio = image.width / image.height
-screen_ratio = width / height
-if screen_ratio < image_ratio:
-    scaled_width = image.width * height // image.height
-    scaled_height = height
-else:
-    scaled_width = width
-    scaled_height = image.height * width // image.width
-
-print(scaled_height)
-print(scaled_width)
-image = image.resize((int(130), int(235)), Image.BICUBIC)
+molespic = molespic.resize((int(130), int(235)), Image.BICUBIC)
 
 # Crop and center the image
 #x = scaled_width // 2 - width // 2
@@ -101,7 +87,7 @@ image = image.resize((int(130), int(235)), Image.BICUBIC)
 #image = image.crop((x, y, x + width, y + height))
 
 # Display image.
-disp.image(image)
+disp.image(molespic)
 
 prevhour=0
 
@@ -113,13 +99,14 @@ x = 0
 y = top
 
 font = ImageFont.truetype("/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf", 18)
+draw= ImageDraw(molespic)
 
 while True:
      
 
     # Draw a black filled box to clear the image.
+    
     draw.rectangle((0, 0, width, height), outline=0, fill=0)
-
     #TODO: Lab 2 part D work should be filled in here. You should be able to look in cli_clock.py and stats.py 
     cur_time = time.strftime("%m/%d/%Y %H:%M:%S")
     draw.text((x, y), cur_time, font=font, fill="#FFFFFF")
@@ -133,6 +120,7 @@ while True:
         molespic= Image.open(imagename)
         molespic = molespic.resize((int(130), int(235)), Image.BICUBIC)
         disp.image(molespic)
+
     time.sleep(1)
     prevhour= hour
 
