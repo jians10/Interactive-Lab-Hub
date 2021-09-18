@@ -13,7 +13,7 @@ Author(s): Melissa LeBlanc-Williams for Adafruit Industries
 import time
 import digitalio
 import board
-from PIL import Image, ImageDraw,ImageFont
+from PIL import Image, ImageDraw,ImageFont,ImageOps
 import adafruit_rgb_display.ili9341 as ili9341
 import adafruit_rgb_display.st7789 as st7789  # pylint: disable=unused-import
 import adafruit_rgb_display.hx8357 as hx8357  # pylint: disable=unused-import
@@ -99,10 +99,14 @@ x = 0
 y = top
 
 font = ImageFont.truetype("/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf", 18)
-draw= ImageDraw.Draw(molespic)
-
+txt = Image.new('L',(100,50))
+#draw= ImageDraw.Draw(molespic)
+d= ImageDraw.Draw(txt)
 cur_time = time.strftime("%m/%d/%Y %H:%M:%S")
-draw.text((x, y), cur_time, font=font, fill="#FFFFFF")
+#draw.text((x, y), cur_time, font=font, fill="#FFFFFF")
+d.text((x, y), cur_time, font=font, fill="#FFFFFF")
+w= txt.rotate(90,expend=1)
+molespic.paste(ImageOps.colorize(w, (0,0,0), (255,255,84)), (242,60),  w)
 disp.image(molespic)
 
 while False:
@@ -113,7 +117,7 @@ while False:
     draw.rectangle((0, 0, width, height), outline=0, fill=0)
     #TODO: Lab 2 part D work should be filled in here. You should be able to look in cli_clock.py and stats.py 
     cur_time = time.strftime("%m/%d/%Y %H:%M:%S")
-    draw.text((x, y), cur_time, font=font, fill="#FFFFFF")
+    #draw.text((x, y), cur_time, font=font, fill="#FFFFFF")
 
     year, month, day, hour, min = map(int, time.strftime("%Y %m %d %H %M").split())
     if(hour!=prevhour):
