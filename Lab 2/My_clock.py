@@ -72,7 +72,7 @@ backlight.value = True
 def image_format(picture):
     picture = picture.convert('RGB')
     picture = picture.rotate(90)
-    picture = picture.resize((200, 100), Image.BICUBIC)
+    picture = picture.resize((120, 200), Image.BICUBIC)
 
     return picture
 
