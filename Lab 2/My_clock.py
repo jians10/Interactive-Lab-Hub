@@ -103,7 +103,7 @@ draw= ImageDraw.Draw(molespic)
 
 cur_time = time.strftime("%m/%d/%Y %H:%M:%S")
 draw.text((x, y), cur_time, font=font, fill="#FFFFFF")
-
+disp.image(molespic)
 
 while False:
      
