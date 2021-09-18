@@ -69,7 +69,7 @@ backlight = digitalio.DigitalInOut(board.D22)
 backlight.switch_to_output()
 backlight.value = True
 
-picture = picture.rotate(90)
+image = image.rotate(90)
 
 image_ratio = image.width / image.height
 screen_ratio = width / height
