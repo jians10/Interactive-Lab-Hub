@@ -27,7 +27,4 @@ while True:
     else:
        rec.PartialResult()
 
-print(type(rec.FinalResult())
 
-
-os.system('./parrot.sh '+ rec.FinalResult())
