@@ -29,3 +29,4 @@ while True:
 
 print(rec.FinalResult())
 
+os.system('./parrot.sh')
