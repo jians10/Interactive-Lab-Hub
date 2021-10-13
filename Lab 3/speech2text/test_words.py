@@ -22,9 +22,9 @@ while True:
     data = wf.readframes(4000)
     if len(data) == 0:
         break
-    if rec.AcceptWaveform(data):
+    #if rec.AcceptWaveform(data):
        # print(rec.Result())
-    else:
+    #else:
        # print(rec.PartialResult())
 
 print(rec.FinalResult())
