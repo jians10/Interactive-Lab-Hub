@@ -30,5 +30,5 @@ while True:
 
 
 print(rec.FinalResult())
-os.system('./parrot.sh '+ res.FinalResult()['text'])
+os.system('./parrot.sh '+ rec.FinalResult()['text'])
 
