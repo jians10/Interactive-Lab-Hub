@@ -23,8 +23,8 @@ while True:
     if len(data) == 0:
         break
     if rec.AcceptWaveform(data):
-        print(rec.Result())
+       # print(rec.Result())
     else:
-        print(rec.PartialResult())
+       # print(rec.PartialResult())
 
 print(rec.FinalResult())
