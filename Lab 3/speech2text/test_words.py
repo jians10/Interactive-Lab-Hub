@@ -29,7 +29,5 @@ while True:
 
 
 print(rec.FinalResult())
-
-print(type(rec.FinalResult())
 os.system('./parrot.sh '+ rec.FinalResult())
 
