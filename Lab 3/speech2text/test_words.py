@@ -27,6 +27,7 @@ while True:
     else:
        rec.PartialResult()
 
+print(type(rec.FinalResult())
 print(rec.FinalResult())
 
 os.system('./parrot.sh '+ rec.FinalResult())
