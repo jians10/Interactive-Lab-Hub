@@ -28,5 +28,6 @@ while True:
        rec.PartialResult()
 
 print(rec.FinalResult())
-os.system('./parrot.sh '+ rec.FinalResult())
+os.system('./parrot.sh ')
+os.system(rec.FinalResult())
 
