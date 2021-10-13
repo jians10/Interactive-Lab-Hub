@@ -29,6 +29,6 @@ while True:
        rec.PartialResult()
 
 
-print(rec.FinalResult())
-os.system('./parrot.sh '+ rec.FinalResult()['text'])
+print(len(rec.FinalResult())
+os.system('./parrot.sh '+ rec.FinalResult())
 
