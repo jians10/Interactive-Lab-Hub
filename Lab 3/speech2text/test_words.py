@@ -30,7 +30,5 @@ while True:
 
 
 print(rec.FinalResult())
-res = json.loads(rec.FinalResult())
-print (res['text'])
-os.system('./parrot.sh '+ res['text'])
+os.system('./parrot.sh '+ res.FinalResult()['text'])
 
