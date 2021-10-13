@@ -4,6 +4,7 @@ from vosk import Model, KaldiRecognizer
 import sys
 import os
 import wave
+import json
 
 if not os.path.exists("model"):
     print ("Please download the model from https://github.com/alphacep/vosk-api/blob/master/doc/models.md and unpack as 'model' in the current folder.")
@@ -29,5 +30,7 @@ while True:
 
 
 print(rec.FinalResult())
-os.system('./parrot.sh '+ rec.FinalResult())
+res = json.loads(rec.FinalResult())
+print (res['text'])
+os.system('./parrot.sh '+ res['text'])
 
